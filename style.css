@@ -1,7 +1,7 @@
 body{
     background-color:#2F4F4F;
     font-family: 'Lato', sans-serif;
-    font-size 20px;
+    font-size: 20px;
     margin: 0;
 }
 
@@ -9,7 +9,7 @@ body{
 .logo
 {
     font-size: 55px;
-    font-weight; 700;    
+    font-weight: 700;    
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -19,7 +19,8 @@ body{
 }
 
 
-#header{
+#header
+{
     width: 100%;
     padding: 40px 0;
 }
@@ -124,6 +125,7 @@ nav{
     background-color: firebrick;
     margin-left: 10%;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
     
@@ -131,19 +133,18 @@ section
 {
     background-color: gainsboro;
     text-align: center;
-    margin-left: 150;
 }
 
 .tytuł
 {
     font-size: 20px;
-    font-weight; 700;    
+    font-weight: 700;    
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 5px;
     margin-top: 5px;
-    margin-bottom: 5px;;
-    color: aliceblue
+    margin-bottom: 5px;
+    color: aliceblue;
 }
 
 .logowanie
