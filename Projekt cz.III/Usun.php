@@ -14,10 +14,11 @@
             
             $polaczenie = new PDO('mysql:host=' . $mysql_host . ';dbname=' . $database , $username, $password );
         
-                $nazwa = $_POST['Produkt'];
 
-                $sql = $polaczenie->query("DELETE FROM produkty WHERE nazwa='$nazwa'");
-        
+                 $sh = $polaczenie->prepare('DELETE FROM produkty WHERE nazwa = :id');
+       
+                $sh->bindValue(':id', $_GET['Produkt'], PDO::PARAM_STR);
+                $sh->execute();
                 echo "Usunięto produkt";
                 
         ?>
