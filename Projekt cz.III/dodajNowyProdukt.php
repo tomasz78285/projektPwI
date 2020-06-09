@@ -23,19 +23,21 @@
             }
     
             $sh = $polaczenie->prepare('
-                INSERT INTO produkty (nazwa, cena, ilosc_w_magazynie, sekcja) VALUES (:nazwa, :cena, :ilosc_w_magazynie, :sekcja)
+                INSERT INTO produkty (nazwa, cena, ilosc_w_magazynie, sekcja, nazwa_pliku) VALUES (:nazwa, :cena, :ilosc_w_magazynie, :sekcja, :plik)
             ');
            
             $nazwa = $_POST['Nazwa'];
             $cena = $_POST['Cena'];
             $ilosc = $_POST['Ilosc'];
             $sekcja = $_POST['Sekcja'];
+            $plik = $_POST['plik'];
  
      
             $sh->bindValue(':nazwa', $nazwa, PDO::PARAM_STR);
             $sh->bindValue(':cena',$cena, PDO::PARAM_STR);
             $sh->bindValue(':ilosc_w_magazynie', $ilosc, PDO::PARAM_INT);
             $sh->bindValue(':sekcja', $sekcja, PDO::PARAM_STR);
+            $sh->bindValue(':plik', $plik, PDO::PARAM_STR);
             $sh->execute();
             echo "Dodano produkt";
                
