@@ -1,3 +1,8 @@
+<?php
+             session_start();
+
+        ?>
+
 <!DOCTYPE HTML>
 <html lang="pl">
 	<head>
@@ -30,22 +35,24 @@
             
        
             $sql = $polaczenie->prepare('
-                INSERT INTO zamowienia (produkt, imie, nazwisko, adres) VALUES (:produkt, :imie, :nazwisko, :adres);
+                INSERT INTO zamowienia (produkt, imie, nazwisko, adres, cena) VALUES (:produkt, :imie, :nazwisko, :adres, :cena);
             ');
             
-            $produkt = $_POST['NazwaProduktu'];
+            $produkt = $_POST['nazwa'];
             $imie = $_POST['imie'];
             $nazwisko = $_POST['nazwisko'];
             $adres = $_POST['adres'];
-            
+            $cena = $_POST['cena'];            
             
             $sql->bindValue(':produkt', $produkt, PDO::PARAM_STR);
             $sql->bindValue(':imie', $imie, PDO::PARAM_STR);
             $sql->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
             $sql->bindValue(':adres', $adres, PDO::PARAM_STR);
+            $sql->bindValue(':cena', $cena, PDO::PARAM_STR);
             $sql->execute();
             
             echo "Złożono zamówienie";
+          
            
         ?>
         
