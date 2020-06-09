@@ -11,80 +11,42 @@
             <header id="header">  
                 <h1 class="logo">SportShop</h1>
             </header>
-                <form action="zamow.php" method="POST">
-                    <article class="kk">
-                        <section class="s1">
-                            Wybierz produkt
-                            <br><br>
-                           <select name="NazwaProduktu">
-                                <option selected>Łyżwy hokejowe</option>
-                                <option>Łyżwy figurowe</option>
-                                <option>Łyżwy panczeny</option>
-                                <option>Narty białe</option>
-                                <option>Narty pomarańczowe</option>
-                                <option>Narty czarne</option>
-                                <option>Kask hokejowy</option>
-                                <option>Kij hokejowy</option>
-                                <option>Rękawice do hokeja</option>
-                                <option>Rękawice mma</option>
-                                <option>Rękawice bokserskie</option>
-                                <option>Rękawice kickboxing</option>
-                                <option>Ochraniacze na piszczele</option>
-                                <option>Ochraniacze na głowę</option>
-                                <option>Ochraniacze na zęby</option>
-                                <option>Koszulka czarna</option>
-                                <option>Koszulka biała</option>
-                                <option>Koszulka biała2</option>
-                                <option>Piłka nożna</option>
-                                <option>Piłka rugby</option>
-                                <option>Piłka koszykówka</option>
-                                <option>Buty korki</option>
-                                <option>Buty halowe</option>
-                                <option>Buty do rugby</option>
-                                <option>Okulary</option>
-                                <option>Czepek</option>
-                                <option>Kąpielówki</option>
-                                <option>Plecak sportowy duży</option>
-                                <option>Plecak turystyczny</option>
-                                <option>Plecak sportowy mały</option>
-                                <option>Dessert</option>
-                                <option>KFD 80</option>
-                                <option>KFD 90</option>
-                                <option>CFM</option>
-                                <option>Carb Control</option>
-                                <option>Matrix</option>
-                                <option>Master drink</option>
-                                <option>Multipower</option>
-                                <option>Optimum</option>
-                                <option>Bluza1</option>
-                                <option>Bluza2</option>
-                                <option>Bluza3</option>
-                                <option>Spodnie1</option>
-                                <option>Spodnie2</option>
-                                <option>Spodnie3</option>
-                                <option>Buty1</option>
-                                <option>Buty2</option>
-                                <option>Buty3</option>
-                                <option>Czapka1</option>
-                                <option>Czapka2</option>
-                                <option>Czapka3</option>
-                                <option>Bluza4</option>
-                                <option>Bluza5</option>
-                                <option>Bluza6</option>
-                                <option>Spodnie4</option>
-                                <option>Spodnie5</option>
-                                <option>Spodnie6</option>
-                                <option>Buty4</option>
-                                <option>Buty5</option>
-                                <option>Buty6</option>
-                                <option>Czapka4</option>
-                                <option>Czapka5</option>
-                                <option>Czapka6</option>
-                            </select>
-                        </section>
-                        
-                    </article>
+            <?php
+            require_once("connect.php");
+            
+            $polaczenie = new PDO('mysql:host=' . $mysql_host . ';dbname=' . $database , $username, $password );
+            
+            $produktId = $_GET['produktId'];
+            $nazwa = null;
+            $cena = null;
+            $sth = $polaczenie->prepare('
+                SELECT nazwa, cena FROM produkty WHERE id_produktu=:produktId;
+            ');
+            
 
+            $sth->bindParam(':produktId', $produktId, PDO::PARAM_INT);
+            $sth->execute();
+            
+            while ($row = $sth->fetch()) {
+           // echo $row['nazwa']."<br />\n";
+            $nazwa=$row['nazwa'];
+            $cena=$row['cena'];
+            }
+?>            
+
+            
+                <form action="zamow.php" method="POST">
+                    
+                    Produkt
+                    <input type="text" name="nazwa" value=<?php echo $nazwa; ?>>
+
+                    <br><br>
+
+                    Cena
+                    <input type="text" name="cena" value=<?php echo $cena; ?>>
+                    
+                   <br><br>
+                    
                     Imie
                     <input type="text" name="imie">
 
