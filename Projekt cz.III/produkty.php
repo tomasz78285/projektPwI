@@ -75,13 +75,14 @@
                         </section>
             </form>
 
-        <form action="Usun.php" method="GET">             
+                   
                     <article class="kk">
+                        <form action="Usun.php" method="POST">  
                         <section class="s1">
 
-
+            
                             <p>Wybierz produkt</p>
-                            <select name="Produkt">
+                        <select name="Produkt">
                         <?php
         
                                   require_once("connect.php");
@@ -101,7 +102,7 @@
                             $sh -> execute();
                             $rows = $sh->fetchAll();
                             foreach($rows as $row){
-                                echo '<option value="'.$row['id_produktu'].'">'.$row['nazwa'].'</option>';
+                                echo '<option>'.$row['nazwa'].'</option>';
                             }
             
                      ?>  
@@ -112,9 +113,10 @@
                
                         <section class="s2">
                                <input type="submit" value="Usun produkt">
-                        </section> 
+                        </section>
+                         </form>
                     </article>
-       </form>
+  
         
         <form action="Edytuj.php" method="POST">             
                     <article class="kk">
@@ -140,7 +142,7 @@
                             $sh -> execute();
                             $rows = $sh->fetchAll();
                             foreach($rows as $row){
-                                echo '<option value="'.$row['id_produktu'].'">'.$row['nazwa'].'</option>';
+                                echo '<option>'.$row['nazwa'].'</option>';
                             }
             
                      ?>  
