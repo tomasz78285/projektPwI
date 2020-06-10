@@ -24,21 +24,21 @@
 
              <nav class="nav">
                 <ul class="menu">
-                    <li><a href="https://kadlubowski78285.000webhostapp.com/index.html">Strona główna</a></li>
+                    <li><a href="https://kadlubowski78285.000webhostapp.com/index.php">Strona główna</a></li>
                     <li><a href="#">Sprzęt sportowy</a>
                         <ul>
-                            <li><a href="https://kadlubowski78285.000webhostapp.com/Sporty_letnie.html">Sporty letnie</a></li>
-                            <li><a href="https://kadlubowski78285.000webhostapp.com/Sporty_zimowe.html">Sporty zimowe</a></li>
-                            <li><a href="https://kadlubowski78285.000webhostapp.com/Sporty_walki.html">Sporty walki</a></li>
+                            <li><a href="https://kadlubowski78285.000webhostapp.com/Sporty_letnie.php">Sporty letnie</a></li>
+                            <li><a href="https://kadlubowski78285.000webhostapp.com/Sporty_zimowe.php">Sporty zimowe</a></li>
+                            <li><a href="https://kadlubowski78285.000webhostapp.com/Sporty_walki.php">Sporty walki</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Odzież sportowa</a>
                         <ul>
-                            <li><a href="https://kadlubowski78285.000webhostapp.com/Odziez_damska.html">Damska</a></li>
-                            <li><a href="https://kadlubowski78285.000webhostapp.com/Odziez_meska.html">Męska</a></li>
+                            <li><a href="https://kadlubowski78285.000webhostapp.com/Odziez_damska.php">Damska</a></li>
+                            <li><a href="https://kadlubowski78285.000webhostapp.com/Odziez_meska.php">Męska</a></li>
                         </ul>
                     </li>
-                    <li><a href="https://kadlubowski78285.000webhostapp.com/Suplementy.html">Suplementy</a></li>
+                    <li><a href="https://kadlubowski78285.000webhostapp.com/Suplementy.php">Suplementy</a></li>
                     <li><a href="http://localhost/Sklep/logowanie.php">Logowanie</a></li>
                     <li><a href="https://kadlubowski78285.000webhostapp.com/Koszyk.php" class="koszyk"><i class="fas fa-shopping-basket"></i></a></li>
                 </ul>
@@ -58,8 +58,12 @@
                     <br><br>
 
                     <input type="submit" value="Zaloguj się">
-
+                    
                 </form>
+                    <br>
+                    <a href=https://kadlubowski78285.000webhostapp.com/rejestracja.php>Rejestracja</a>
+
+                    <br><br>
             </article>
             
             <?php
