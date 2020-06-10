@@ -47,6 +47,11 @@
                     
                    <br><br>
                     
+                    Ilosc
+                    <input type=" number" name="ilosc">
+                    
+                    <br><br>
+
                     Imie
                     <input type="text" name="imie">
 
@@ -64,10 +69,6 @@
                             <input type="submit" value="Zamów">
 
                 </form>
-                
-               
-                
-                
         
          
 
