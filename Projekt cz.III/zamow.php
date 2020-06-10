@@ -35,21 +35,24 @@
             
        
             $sql = $polaczenie->prepare('
-                INSERT INTO zamowienia (produkt, imie, nazwisko, adres, cena) VALUES (:produkt, :imie, :nazwisko, :adres, :cena);
+                INSERT INTO zamowienia (produkt, imie, nazwisko, adres, cena, il_sztuk) VALUES (:produkt, :imie, :nazwisko, :adres, :cena, :ilosc);
             ');
             
             $produkt = $_POST['nazwa'];
             $imie = $_POST['imie'];
             $nazwisko = $_POST['nazwisko'];
             $adres = $_POST['adres'];
-            $cena = $_POST['cena'];            
+            $cena = $_POST['cena'];   
+            $ilosc = $_POST['ilosc'];
             
             $sql->bindValue(':produkt', $produkt, PDO::PARAM_STR);
             $sql->bindValue(':imie', $imie, PDO::PARAM_STR);
             $sql->bindValue(':nazwisko', $nazwisko, PDO::PARAM_STR);
             $sql->bindValue(':adres', $adres, PDO::PARAM_STR);
             $sql->bindValue(':cena', $cena, PDO::PARAM_STR);
+            $sql->bindValue(':ilosc', $ilosc, PDO::PARAM_INT);
             $sql->execute();
+            
             
             echo "Złożono zamówienie";
           
